@@ -1,0 +1,451 @@
+/* Styles for class_conversation.html - Presentable Version */
+/* Aesthetic Color Palette & Typography Variables */
+:root {
+    --primary-green: #4CAF50; /* A vibrant green for accents */
+    --secondary-green: #BEDE8D; /* Light green for backgrounds */
+    --dark-green: #2E5B31; /* Dark green for text/footer */
+    --light-gray: #f4f4f4; /* Subtle background for sections */
+    --white: #fff;
+    --text-dark: #333;
+    --text-light: #666;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --border-color: #ddd;
+
+    /* Calendar specific variables (adapted from previous blue to green) */
+    --calendar-primary-color: var(--primary-green);
+    --calendar-dark-color: var(--dark-green);
+    --calendar-light-gray: #f3f2f1; /* Slightly different gray for calendar elements */
+    --calendar-medium-gray: #edebe9;
+    --calendar-dark-text: #323130;
+    --calendar-border: #e1e1e1;
+    --calendar-hover-bg: #f3f2f1;
+    --calendar-selected-bg: var(--primary-green); /* Selected date background */
+    --calendar-today-border: var(--primary-green); /* Border for today's date */
+
+    /* Event specific colors (from reference) */
+    --event-color-1: #00BCD4; /* Cyan */
+    --event-color-2: #FFEB3B; /* Yellow */
+    --event-color-3: #9C27B0; /* Purple */
+    --event-color-4: #F44336; /* Red */
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif; /* Using Roboto from Google Fonts */
+    background-color: var(--secondary-green); /* Consistent light green background */
+    display: flex; /* For pushing footer to bottom */
+    flex-direction: column; /* For pushing footer to bottom */
+    min-height: 100vh; /* For pushing footer to bottom */
+    color: var(--text-dark); /* Default text color */
+}
+
+/* --- Navigation Bar --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-green);
+    padding: 0.8rem 2rem;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    flex-wrap: wrap; /* Allow nav items to wrap */
+}
+
+
+.logo {
+    background-color: var(--primary-green);
+    /* Set the background image for the logo */
+    background-image: url('https://scontent.fmnl17-2.fna.fbcdn.net/v/t39.30808-1/510343138_122229514226162784_3813583714701362691_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=107&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeHDjVgER4yF4uE1fgfByrh7g8qWIea_qr2DypYh5r-qvb-V_6NIn5gHRhY0pGi7QrAR_-hoVQTnDR4uyyy_W7n7&_nc_ohc=IlYcSNY8BkgQ7kNvwEwQk2T&_nc_oc=Adnpwycbhd-cayH3_QwE_H-ZoKambEb2RsmIAiO44b09X1w9EsJa6E1gE7tL4rrqSLc&_nc_zt=24&_nc_ht=scontent.fmnl17-2.fna&_nc_gid=kvf0KiqokdJDra3gNnQmhQ&oh=00_AfTMc4m-zN6ulxD2a9ZPhwq6-zLRtva-lAUCRf-mHtXVjQ&oe=6878FDB6');
+    background-size: cover; /* Make the image cover the entire div */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    color: var(--white); /* Text color if there was text, but replaced with image */
+    font-weight: 700;
+    padding: 0; /* Remove padding as it's now an image container */
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex; /* Kept for centering potential text if no image, but not strictly needed with background-image */
+    align-items: center; /* Kept for centering potential text */
+    justify-content: center; /* Kept for centering potential text */
+    font-size: 1.6rem; /* Kept for potential text */
+    box-shadow: 0 4px 10px var(--shadow-medium);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-transform: uppercase;
+    text-decoration: none;
+    overflow: hidden; /* Crucial for clipping to circle if the image aspect ratio is off */
+}
+
+.logo:hover {
+    transform: scale(1.08) rotate(5deg);
+    background-color: #43A047;
+}
+/* End Logo Styling */
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem; /* Use gap for spacing */
+}
+
+.nav-links a {
+    color: var(--text-dark);
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px var(--shadow-light);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: var(--primary-green);
+    color: var(--white);
+    border-color: var(--primary-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-medium);
+}
+
+/* --- Header Section --- */
+header {
+    text-align: center;
+    background: linear-gradient(to right, var(--dark-green), #386641);
+    color: var(--white);
+    padding: 2.5rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    margin: 0;
+    font-size: inherit;
+}
+
+/* --- Main Content Sections --- */
+main {
+    flex-grow: 1; /* Allows main content to take available space */
+}
+/* --- Header Section --- */
+/* The header-banner is likely specific to this page, so keeping its structure but updating colors */
+.header-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the title by default */
+    padding: 20px;
+    background-color: var(--dark-green); /* Changed to dark-green for consistency with new nav */
+    color: var(--white); /* Using white from :root */
+    position: relative; /* For positioning the back icon */
+    box-shadow: 0 4px 8px var(--shadow-medium); /* Add a subtle shadow to the header */
+}
+
+.header-banner .back-icon {
+    position: absolute;
+    left: 20px;
+    color: var(--white); /* Using white from :root */
+    font-size: 1.8em; /* Slightly larger for better tap target */
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.header-banner .back-icon:hover {
+    color: #e0e0e0; /* Lighter white on hover */
+    transform: translateX(-3px); /* Subtle slide effect */
+}
+
+.header-banner h1 {
+    margin: 0;
+    font-size: 2.2em; /* Slightly larger title */
+    text-align: center;
+    flex-grow: 1;
+    font-family: 'Roboto', Arial, sans-serif; /* Consistent font */
+    font-weight: 700; /* Bolder title */
+    letter-spacing: 0.5px;
+}
+
+.content {
+    padding: 30px;
+    max-width: 1050px; /* 👈 Increase width */
+    width: 90%;       /* 👈 Responsive width */
+    margin: 30px auto;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px var(--shadow-medium);
+    flex-grow: 1;
+}
+
+
+.conversation-section {
+    padding: 0; /* Remove padding here as content handles it */
+}
+
+.conversation-section h2 {
+    color: var(--dark-green); /* Using dark-green from :root */
+    text-align: center;
+    margin-bottom: 30px; /* More space below heading */
+    font-size: 2em; /* Larger, more prominent heading */
+    font-family: 'Roboto', Arial, sans-serif; /* Consistent font */
+    font-weight: 600;
+}
+
+/* Messages container (the chat window) */
+.messages-container {
+    height: 450px; /* Slightly taller chat area */
+    border: 1px solid var(--border-color); /* Using border-color from :root */
+    border-radius: 10px; /* Consistent rounded corners */
+    padding: 20px; /* More internal padding */
+    overflow-y: auto; /* Enable scrolling for messages */
+    margin-bottom: 25px; /* More space before input area */
+    background-color: var(--light-gray); /* Using light-gray from :root */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* More space between messages */
+    font-family: 'Roboto', Arial, sans-serif; /* Consistent font */
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05); /* Subtle inner shadow for depth */
+}
+
+/* Scrollbar customization for messages-container */
+.messages-container::-webkit-scrollbar {
+    width: 8px;
+}
+.messages-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.messages-container::-webkit-scrollbar-thumb {
+    background: var(--primary-green);
+    border-radius: 10px;
+}
+.messages-container::-webkit-scrollbar-thumb:hover {
+    background: #43A047;
+}
+
+
+/* Individual message styling */
+.message-item {
+    padding: 12px 18px; /* More padding inside bubbles */
+    border-radius: 20px; /* More rounded bubbles */
+    max-width: 75%; /* Slightly less width for better flow */
+    word-wrap: break-word;
+    box-shadow: 0 2px 5px var(--shadow-light); /* Clearer shadow for bubbles */
+    font-size: 1em; /* Standard font size for message content */
+    line-height: 1.5;
+}
+
+.message-item.sent {
+    background-color: var(--primary-green); /* Primary green for sent messages */
+    color: var(--white); /* White text on green background */
+    align-self: flex-end;
+    border-bottom-right-radius: 8px; /* Slightly less rounded bottom-right */
+}
+
+.message-item.received {
+    background-color: var(--white); /* White for received messages */
+    color: var(--text-dark); /* Dark text on white background */
+    align-self: flex-start;
+    border-bottom-left-radius: 8px; /* Slightly less rounded bottom-left */
+    border: 1px solid var(--border-color); /* Add a subtle border to received messages */
+}
+
+.message-item strong {
+    display: block;
+    font-size: 0.9em; /* Smaller name */
+    color: inherit;
+    margin-bottom: 3px; /* Less space below name */
+    font-weight: 700; /* Bolder name */
+}
+
+.message-item span.timestamp {
+    display: block;
+    font-size: 0.7em; /* Even smaller timestamp */
+    color: rgba(255, 255, 255, 0.6); /* Lighter timestamp on sent messages */
+    text-align: right;
+    margin-top: 5px;
+}
+.message-item.received span.timestamp {
+    color: var(--text-light); /* Lighter grey for timestamp on received messages */
+    text-align: left;
+}
+
+
+/* Message input area */
+.message-input-area {
+    display: flex;
+    gap: 15px; /* More space between input and button */
+    align-items: center; /* Vertically align items */
+}
+
+.message-input-area input[type="text"] {
+    flex-grow: 1;
+    padding: 14px 20px; /* More padding for input field */
+    border: 1px solid var(--border-color); /* Using border-color from :root */
+    border-radius: 30px; /* Even more rounded input field */
+    font-size: 1.05em; /* Slightly larger font */
+    font-family: 'Roboto', Arial, sans-serif; /* Consistent font */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background-color: var(--white); /* Ensure input background is white */
+}
+
+.message-input-area input[type="text"]:focus {
+    border-color: var(--primary-green); /* Primary green border on focus */
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.3); /* Clearer focus ring */
+}
+
+.message-input-area button {
+    background-color: var(--primary-green); /* Primary green for button */
+    color: var(--white); /* White text on button */
+    padding: 14px 25px; /* More padding for a bigger button */
+    border: none;
+    border-radius: 30px; /* More rounded button */
+    cursor: pointer;
+    font-size: 1.1em; /* Larger button text */
+    font-weight: 700; /* Bolder button text */
+    font-family: 'Roboto', Arial, sans-serif; /* Consistent font */
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px var(--shadow-medium); /* Button shadow */
+}
+
+.message-input-area button:hover {
+    background-color: #43A047; /* Slightly darker green on hover */
+    transform: translateY(-2px) scale(1.02); /* Lift and slightly enlarge */
+    box-shadow: 0 6px 12px var(--shadow-medium);
+}
+
+.message-input-area button:active {
+    transform: translateY(0); /* Press effect */
+    box-shadow: 0 2px 5px var(--shadow-light);
+}
+
+.loading-messages, .no-messages {
+    text-align: center;
+    color: var(--text-light); /* Using text-light from :root */
+    margin-top: 20px;
+    font-family: 'Roboto', Arial, sans-serif; /* Consistent font */
+    font-size: 1.1em;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.7); /* Slightly translucent background */
+    box-shadow: 0 1px 3px var(--shadow-light);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav {
+        padding: 0.6rem 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links {
+        margin-top: 0.5rem;
+        justify-content: center;
+    }
+    .nav-links a {
+        margin: 0.3rem;
+        padding: 0.5rem 1rem;
+    }
+    .logo {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 0.5rem;
+    }
+    .header-banner {
+        padding: 15px;
+    }
+    .header-banner h1 {
+        font-size: 1.8em;
+    }
+    .header-banner .back-icon {
+        font-size: 1.5em;
+        left: 15px;
+    }
+    .content {
+        padding: 20px;
+        margin: 20px auto;
+    }
+    .conversation-section h2 {
+        font-size: 1.6em;
+        margin-bottom: 20px;
+    }
+    .messages-container {
+        height: 350px; /* Adjust height for smaller screens */
+        padding: 15px;
+        gap: 10px;
+    }
+    .message-item {
+        max-width: 85%;
+        padding: 10px 15px;
+        border-radius: 15px;
+    }
+    .message-input-area {
+        flex-direction: column; /* Stack input and button vertically */
+        gap: 10px;
+    }
+    .message-input-area input[type="text"] {
+        width: calc(100% - 30px); /* Account for padding */
+        margin-bottom: 0; /* Remove bottom margin when stacked */
+        padding: 12px 15px;
+        border-radius: 25px;
+    }
+    .message-input-area button {
+        width: 100%;
+        padding: 12px 20px;
+        border-radius: 25px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-links a {
+        width: calc(100% - 2rem);
+        text-align: center;
+    }
+    .header-banner h1 {
+        font-size: 1.5em;
+    }
+    .header-banner .back-icon {
+        font-size: 1.3em;
+        left: 10px;
+    }
+    .content {
+        padding: 15px;
+        margin: 15px auto;
+    }
+    .messages-container {
+        height: 300px;
+        padding: 10px;
+    }
+    .message-item {
+        font-size: 0.9em;
+    }
+    .message-input-area input[type="text"] {
+        font-size: 0.95em;
+        padding: 10px 12px;
+    }
+    .message-input-area button {
+        font-size: 0.95em;
+        padding: 10px 15px;
+    }
+}
+
+/* --- Footer Styles --- */
+footer {
+    background-color: var(--dark-green); /* Dark green background from the image */
+    color: var(--white); /* White text from the image */
+    text-align: center; /* Centered text from the image */
+    padding: 1.5rem 0; /* Updated padding as per reference */
+    margin-top: auto; /* Pushes the footer to the bottom of the page */
+    font-size: 0.9rem; /* Updated font size as per reference */
+    font-weight: 400; /* Added font-weight as per reference */
+    letter-spacing: 0.5px; /* Added letter-spacing as per reference */
+    box-shadow: 0 -4px 8px var(--shadow-light); /* Optional: subtle shadow at the top of the footer */
+}

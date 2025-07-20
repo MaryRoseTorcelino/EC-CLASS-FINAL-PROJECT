@@ -1,0 +1,214 @@
+ /* Aesthetic Color Palette & Typography Variables */
+ :root {
+    --primary-green: #4CAF50; /* A vibrant green for accents */
+    --secondary-green: #BEDE8D; /* Light green for backgrounds */
+    --dark-green: #2E5B31; /* Dark green for text/footer */
+    --light-gray: #f4f4f4; /* Subtle background for sections */
+    --white: #fff;
+    --text-dark: #333;
+    --text-light: #666;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --border-color: #ddd;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif; /* Use Roboto consistently */
+    background-color: var(--secondary-green); /* Consistent light green background */
+    display: flex; /* For pushing footer to bottom */
+    flex-direction: column; /* For pushing footer to bottom */
+    min-height: 100vh; /* For pushing footer to bottom */
+    color: var(--text-dark); /* Default text color */
+}
+
+/* --- Navigation Bar --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-green);
+    padding: 0.8rem 2rem;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    flex-wrap: wrap; /* Allow nav items to wrap */
+}
+
+.logo {
+    background-color: var(--primary-green);
+    /* NEW: Use background-image instead of <img> */
+    /* Ensure this URL is correct and accessible */
+    background-image: url('https://scontent.fmnl17-2.fna.fbcdn.net/v/t39.30808-1/510343138_122229514226162784_3813583714701362691_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=107&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeHDjVgER4yF4uE1fgfByrh7g8qWIea_qr2DypYh5r-qvb-V_6NIn5gHRhY0pGi7QrAR_-hoVQTnDR4uyyy_W7n7&_nc_ohc=IlYcSNY8BkgQ7kNvwEwQk2T&_nc_oc=Adnpwycbhd-cayH3_QwE_H-ZoKambEb2RsmIAiO44b09X1w9EsJa6E1gE7tL4rrqSLc&_nc_zt=24&_nc_ht=scontent.fmnl17-2.fna&_nc_gid=kvf0KiqokdJDra3gNnQmhQ&oh=00_AfTMc4m-zN6ulxD2a9ZPhwq6-zLRtva-lAUCRf-mHtXVjQ&oe=6878FDB6');
+    background-size: cover; /* This makes the image cover the entire div */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    /* The 'color', 'font-weight', 'font-size', and 'text-transform' properties below
+       are largely unnecessary if the logo is purely an image background and has no text content.
+       They are kept here in case you decide to have fallback text or integrate text later. */
+    color: var(--white);
+    font-weight: 700;
+    padding: 0;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    box-shadow: 0 4px 10px var(--shadow-medium);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-transform: uppercase;
+    text-decoration: none;
+    overflow: hidden; /* Still crucial for clipping to circle if the image aspect ratio is off */
+}
+
+.logo:hover {
+    transform: scale(1.08) rotate(5deg);
+    background-color: #43A047;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem; /* Use gap for spacing */
+}
+
+.nav-links a {
+    color: var(--text-dark);
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px var(--shadow-light);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: var(--primary-green);
+    color: var(--white);
+    border-color: var(--primary-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-medium);
+}
+
+/* --- Header Banner --- */
+.header-banner {
+    background: linear-gradient(to right, var(--dark-green), #386641);
+    color: var(--white);
+    text-align: center;
+    padding: 2.5rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header-banner h1 {
+    margin: 0;
+    font-size: inherit;
+}
+
+/* --- Content Section --- */
+.content {
+    flex-grow: 1; /* Allows content to take available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.content h2 {
+    font-size: 2rem;
+    color: var(--dark-green);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.content p {
+    max-width: 700px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.content img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin-top: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px var(--shadow-medium);
+    transition: transform 0.3s ease;
+}
+
+.content img:hover {
+    transform: scale(1.02);
+}
+
+/* --- Footer Styles --- */
+footer {
+    margin-top: auto;
+    text-align: center;
+    background-color: var(--dark-green);
+    color: var(--white);
+    padding: 1.5rem;
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav {
+        padding: 0.6rem 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links {
+        margin-top: 0.5rem;
+        justify-content: center;
+    }
+    .nav-links a {
+        margin: 0.3rem;
+        padding: 0.5rem 1rem;
+    }
+    .logo {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+    .header-banner {
+        padding: 2rem 0;
+        font-size: 2rem;
+    }
+    .content {
+        padding: 2rem 1rem;
+    }
+    .content h2 {
+        font-size: 1.8rem;
+    }
+    .content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-links a {
+        width: calc(100% - 2rem); /* Make nav links full width minus padding */
+        text-align: center;
+    }
+}

@@ -1,0 +1,269 @@
+:root {
+    --primary-green: #4CAF50;
+    --secondary-green: #BEDE8D;
+    --dark-green: #2E5B31;
+    --light-gray: #f4f4f4;
+    --white: #fff;
+    --text-dark: #333;
+    --text-light: #666;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --border-color: #ddd;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: var(--secondary-green);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--text-dark);
+}
+
+/* --- Navigation Bar --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-green);
+    padding: 0.8rem 2rem;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    flex-wrap: wrap; /* Allow nav items to wrap */
+}
+
+.logo {
+    background-color: var(--primary-green);
+    /* Set the background image for the logo */
+    background-image: url('https://scontent.fmnl17-2.fna.fbcdn.net/v/t39.30808-1/510343138_122229514226162784_3813583714701362691_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=107&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeHDjVgER4yF4uE1fgfByrh7g8qWIea_qr2DypYh5r-qvb-V_6NIn5gHRhY0pGi7QrAR_-hoVQTnDR4uyyy_W7n7&_nc_ohc=IlYcSNY8BkgQ7kNvwEwQk2T&_nc_oc=Adnpwycbhd-cayH3_QwE_H-ZoKambEb2RsmIAiO44b09X1w9EsJa6E1gE7tL4rrqSLc&_nc_zt=24&_nc_ht=scontent.fmnl17-2.fna&_nc_gid=kvf0KiqokdJDra3gNnQmhQ&oh=00_AfTMc4m-zN6ulxD2a9ZPhwq6-zLRtva-lAUCRf-mHtXVjQ&oe=6878FDB6');
+    background-size: cover; /* Make the image cover the entire div */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    color: var(--white); /* Text color if there was text, but replaced with image */
+    font-weight: 700;
+    padding: 0; /* Remove padding as it's now an image container */
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex; /* Kept for centering potential text if no image, but not strictly needed with background-image */
+    align-items: center; /* Kept for centering potential text */
+    justify-content: center; /* Kept for centering potential text */
+    font-size: 1.6rem; /* Kept for potential text */
+    box-shadow: 0 4px 10px var(--shadow-medium);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-transform: uppercase;
+    text-decoration: none;
+    overflow: hidden; /* Crucial for clipping to circle if the image aspect ratio is off */
+}
+
+
+.logo:hover {
+    transform: scale(1.08) rotate(5deg);
+    background-color: #43A047;
+}
+/* End Logo Styling */
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem; /* Use gap for spacing */
+}
+
+.nav-links a {
+    color: var(--text-dark);
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px var(--shadow-light);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: var(--primary-green);
+    color: var(--white);
+    border-color: var(--primary-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-medium);
+}
+
+/* --- Header Banner --- */
+.header-banner {
+    background: linear-gradient(to right, var(--dark-green), #386641);
+    color: var(--white);
+    text-align: center;
+    padding: 2.5rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header-banner h1 {
+    margin: 0;
+    font-size: inherit;
+}
+
+/* --- Profile Container & Card --- */
+.profile-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+}
+
+.profile-card {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 10px 25px var(--shadow-medium);
+    text-align: center;
+}
+
+/* Profile Picture Styling */
+.profile-img-container {
+    margin-bottom: 2rem;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-green);
+    box-shadow: 0 0 0 5px rgba(76, 175, 80, 0.2);
+    margin: 0 auto 1rem auto;
+}
+
+/* --- Form & Display Group --- */
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+label {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 8px;
+    color: var(--dark-green);
+    font-size: 1.05rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"] { /* Added type="url" for profile picture link */
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus { /* Added type="url" */
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    outline: none;
+}
+
+button {
+    background: var(--primary-green);
+    color: var(--white);
+    padding: 0.9rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    width: auto;
+    min-width: 180px;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px var(--shadow-medium);
+}
+
+button:hover {
+    background: #43A047;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px var(--shadow-medium);
+}
+
+/* --- Profile Display --- */
+#profileDisplay p {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+#profileDisplay strong {
+    color: var(--dark-green);
+    font-weight: 700;
+    margin-right: 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* --- Footer --- */
+footer {
+    margin-top: 3rem;
+    text-align: center;
+    background-color: var(--dark-green);
+    color: var(--white);
+    padding: 1.5rem;
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav {
+        padding: 0.6rem 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links {
+        margin-top: 0.5rem;
+        justify-content: center;
+    }
+    .nav-links a {
+        margin: 0.3rem;
+        padding: 0.5rem 1rem;
+    }
+    .logo {
+        width: 50px;
+        height: 50px;
+        padding: 0.6rem; /* Adjusted for smaller screens to match design */
+    }
+    .header-banner {
+        padding: 2rem 0;
+        font-size: 2rem;
+    }
+    .profile-container {
+        padding: 2rem 1rem;
+    }
+    .profile-card {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-links a {
+        width: calc(100% - 2rem);
+        text-align: center;
+    }
+}

@@ -1,0 +1,104 @@
+/* Specific styles for Grades page, building upon dashboard.css and events.css */
+
+/* Adjustments for grades-specific layout if needed */
+.grade-list-section h2 {
+    margin-bottom: 20px; /* Space between heading and list container */
+}
+
+/* Grade item styling - similar to event-item but with specific color rotation */
+.grade-item {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light-gray);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px var(--shadow-light);
+    transition: transform 0.2s ease;
+    position: relative;
+    color: var(--white); /* Default text color */
+}
+
+.grade-item:hover {
+    transform: translateY(-3px);
+}
+
+/* Color rotation for grade items - using similar event colors */
+.grade-item:nth-child(odd) { background-color: var(--event-color-3); } /* Purple */
+.grade-item:nth-child(even) { background-color: var(--event-color-1); } /* Cyan */
+.grade-item:nth-child(3n) { background-color: var(--event-color-4); } /* Red */
+.grade-item:nth-child(4n) { background-color: var(--secondary-green); color: var(--text-dark); } /* Secondary Green, adjust text */
+
+
+/* Ensure text is dark on lighter backgrounds if using secondary-green */
+.grade-item:nth-child(4n) h3,
+.grade-item:nth-child(4n) p {
+    color: var(--text-dark);
+}
+
+.grade-item h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+    color: inherit; /* Inherit color from parent */
+}
+
+.grade-item p {
+    margin: 0 0 5px 0;
+    font-size: 0.95rem;
+    color: inherit; /* Inherit color from parent */
+}
+
+.grade-item .grade-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: flex-end;
+}
+
+.grade-item .grade-actions button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.2s ease;
+    color: var(--text-dark);
+    background-color: var(--white);
+}
+
+.grade-item .grade-actions button:hover {
+    background-color: #e0e0e0;
+}
+
+.grade-item .grade-actions .delete-btn {
+    background-color: #f44336;
+    color: var(--white);
+}
+.grade-item .grade-actions .delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Responsive adjustments for grades page */
+@media (max-width: 768px) {
+    .grade-list-section, .form-section {
+        padding: 2rem 1rem;
+    }
+    .grade-item {
+        padding: 10px;
+    }
+    .grade-item h3 {
+        font-size: 1.1rem;
+    }
+    .grade-item p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Further smaller screen adjustments, if needed */
+@media (max-width: 480px) {
+    /* Styles for form and list are largely covered by events.css responsiveness */
+}

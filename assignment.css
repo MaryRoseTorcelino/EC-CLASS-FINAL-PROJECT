@@ -1,0 +1,415 @@
+/* Aesthetic Color Palette & Typography Variables */
+:root {
+    --primary-green: #4CAF50; /* A vibrant green for accents */
+    --secondary-green: #BEDE8D; /* Light green for backgrounds */
+    --dark-green: #2E5B31; /* Dark green for text/footer */
+    --light-gray: #f4f4f4; /* Subtle background for sections */
+    --white: #fff;
+    --text-dark: #333;
+    --text-light: #666;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --border-color: #ddd;
+
+    /* Assignment specific colors */
+    --assignment-color-1: #FF9800; /* Orange */
+    --assignment-color-2: #2196F3; /* Blue */
+    --assignment-color-3: #E91E63; /* Pink */
+    --assignment-color-4: #4CAF50; /* Green (primary) */
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: var(--secondary-green);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--text-dark);
+}
+
+/* --- Navigation Bar --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-green);
+    padding: 0.8rem 2rem;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    flex-wrap: wrap;
+}
+
+.logo {
+    background-color: var(--primary-green);
+    background-image: url('https://scontent.fmnl17-2.fna.fbcdn.net/v/t39.30808-1/510343138_122229514226162784_3813583714701362691_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=107&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeHDjVgER4yF4uE1fgfByrh7g8qWIea_qr2DypYh5r-qvb-V_6NIn5gHRhY0pGi7QrAR_-hoVQTnDR4uyyy_W7n7&_nc_ohc=IlYcSNY8BkgQ7kNvwEwQk2T&_nc_oc=Adnpwycbhd-cayH3_QwE_H-ZoKambEb2RsmIAiO44b09X1w9EsJa6E1gE7tL4rrqSLc&_nc_zt=24&_nc_ht=scontent.fmnl17-2.fna&_nc_gid=kvf0KiqokdJDra3gNnQmhQ&oh=00_AfTMc4m-zN6ulxD2a9ZPhwq6-zLRtva-lAUCRf-mHtXVjQ&oe=6878FDB6');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--white);
+    font-weight: 700;
+    padding: 0;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    box-shadow: 0 4px 10px var(--shadow-medium);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-transform: uppercase;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.logo:hover {
+    transform: scale(1.08) rotate(5deg);
+    background-color: #43A047;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.nav-links a {
+    color: var(--text-dark);
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px var(--shadow-light);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: var(--primary-green);
+    color: var(--white);
+    border-color: var(--primary-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-medium);
+}
+
+/* --- Header Section --- */
+header {
+    text-align: center;
+    background: linear-gradient(to right, var(--dark-green), #386641);
+    color: var(--white);
+    padding: 2.5rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    margin: 0;
+    font-size: inherit;
+}
+
+/* --- Main Content Sections --- */
+main {
+    flex-grow: 1;
+    padding: 3rem 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--light-gray);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px var(--shadow-light);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--dark-green);
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Form Styling */
+.form-container {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px var(--shadow-medium);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group textarea,
+.form-group select { /* Added select for status */
+    width: calc(100% - 22px);
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--primary-green);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.form-buttons button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.form-buttons .submit-button {
+    background-color: var(--primary-green);
+    color: var(--white);
+}
+
+.form-buttons .submit-button:hover {
+    background-color: #43A047;
+    transform: translateY(-2px);
+}
+
+.form-buttons .cancel-button {
+    background-color: var(--light-gray);
+    color: var(--text-dark);
+    border: 1px solid var(--border-color);
+}
+
+.form-buttons .cancel-button:hover {
+    background-color: #e0e0e0;
+}
+
+/* --- Assignment List Specific Styles --- */
+.assignment-list-container {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px var(--shadow-medium);
+    text-align: left;
+}
+
+#assignmentsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.assignment-item {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light-gray);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px var(--shadow-light);
+    transition: transform 0.2s ease;
+    position: relative;
+    background-color: var(--assignment-color-1); /* Default assignment background */
+    color: var(--white); /* Default text color for assignments */
+}
+
+.assignment-item:nth-child(even) { background-color: var(--assignment-color-2); }
+.assignment-item:nth-child(3n) { background-color: var(--assignment-color-3); }
+.assignment-item:nth-child(4n) { background-color: var(--assignment-color-4); }
+
+.assignment-item.completed {
+    opacity: 0.7;
+    border-left: 8px solid #4CAF50; /* Green border for completed */
+}
+
+.assignment-item.pending {
+    border-left: 8px solid #FFC107; /* Amber border for pending */
+}
+
+.assignment-item:hover {
+    transform: translateY(-3px);
+}
+
+.assignment-item h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+    color: var(--white);
+}
+
+.assignment-item p {
+    margin: 0 0 5px 0;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.assignment-item .assignment-date,
+.assignment-item .assignment-time,
+.assignment-item .assignment-status {
+    font-weight: 500;
+    color: var(--white);
+}
+
+.assignment-item .description {
+    font-style: italic;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.5);
+}
+
+.assignment-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: flex-end;
+}
+
+.assignment-actions button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.2s ease;
+    color: var(--text-dark);
+    background-color: var(--white);
+}
+
+.assignment-actions button:hover {
+    background-color: #e0e0e0;
+}
+
+.assignment-actions .delete-btn {
+    background-color: #f44336;
+    color: var(--white);
+}
+.assignment-actions .delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav {
+        padding: 0.6rem 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links {
+        margin-top: 0.5rem;
+        justify-content: center;
+    }
+    .nav-links a {
+        margin: 0.3rem;
+        padding: 0.5rem 1rem;
+    }
+    .logo {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 0.5rem;
+    }
+    header {
+        padding: 2rem 0;
+        font-size: 2rem;
+    }
+    main {
+        padding: 2rem 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        gap: 20px;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    .form-container, .assignment-list-container {
+        padding: 20px;
+    }
+    .form-group label {
+        font-size: 1rem;
+    }
+    .form-group input, .form-group textarea, .form-group select {
+        padding: 10px;
+    }
+    .form-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .form-buttons button {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+    }
+    .assignment-item {
+        padding: 10px;
+    }
+    .assignment-item h3 {
+        font-size: 1.1rem;
+    }
+    .assignment-item p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-links a {
+        width: calc(100% - 2rem);
+        text-align: center;
+    }
+}
+
+/* --- Footer Styles --- */
+footer {
+    background-color: var(--dark-green); /* Dark green background as seen in image_9a489b.png */
+    color: var(--white); /* White text as seen in image_9a489b.png */
+    text-align: center; /* Centered text as seen in image_9a489b.png */
+    padding: 1.2rem 0; /* Vertical padding for spacing */
+    margin-top: auto; /* Pushes the footer to the bottom of the page */
+    font-size: 0.9em; /* Adjust font size for footer text */
+    box-shadow: 0 -4px 8px var(--shadow-light); /* Optional: subtle shadow at the top of the footer */
+}

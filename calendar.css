@@ -1,0 +1,538 @@
+/* Aesthetic Color Palette & Typography Variables */
+:root {
+    --primary-green: #4CAF50; /* A vibrant green for accents */
+    --secondary-green: #BEDE8D; /* Light green for backgrounds */
+    --dark-green: #2E5B31; /* Dark green for text/footer */
+    --light-gray: #f4f4f4; /* Subtle background for sections */
+    --white: #fff;
+    --text-dark: #333;
+    --text-light: #666;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --border-color: #ddd;
+
+    /* Calendar specific variables (adapted from previous blue to green) */
+    --calendar-primary-color: var(--primary-green);
+    --calendar-dark-color: var(--dark-green);
+    --calendar-light-gray: #f3f2f1; /* Slightly different gray for calendar elements */
+    --calendar-medium-gray: #edebe9;
+    --calendar-dark-text: #323130;
+    --calendar-border: #e1e1e1;
+    --calendar-hover-bg: #f3f2f1;
+    --calendar-selected-bg: var(--primary-green); /* Selected date background */
+    --calendar-today-border: var(--primary-green); /* Border for today's date */
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif; /* Using Roboto from Google Fonts */
+    background-color: var(--secondary-green); /* Consistent light green background */
+    display: flex; /* For pushing footer to bottom */
+    flex-direction: column; /* For pushing footer to bottom */
+    min-height: 100vh; /* For pushing footer to bottom */
+    color: var(--text-dark); /* Default text color */
+}
+
+/* --- Navigation Bar --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-green);
+    padding: 0.8rem 2rem;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    flex-wrap: wrap; /* Allow nav items to wrap */
+}
+
+.logo {
+    background-color: var(--primary-green);
+    /* Set the background image for the logo */
+    background-image: url('https://scontent.fmnl17-2.fna.fbcdn.net/v/t39.30808-1/510343138_122229514226162784_3813583714701362691_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=107&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeHDjVgER4yF4uE1fgfByrh7g8qWIea_qr2DypYh5r-qvb-V_6NIn5gHRhY0pGi7QrAR_-hoVQTnDR4uyyy_W7n7&_nc_ohc=IlYcSNY8BkgQ7kNvwEwQk2T&_nc_oc=Adnpwycbhd-cayH3_QwE_H-ZoKambEb2RsmIAiO44b09X1w9EsJa6E1gE7tL4rrqSLc&_nc_zt=24&_nc_ht=scontent.fmnl17-2.fna&_nc_gid=kvf0KiqokdJDra3gNnQmhQ&oh=00_AfTMc4m-zN6ulxD2a9ZPhwq6-zLRtva-lAUCRf-mHtXVjQ&oe=6878FDB6');
+    background-size: cover; /* Make the image cover the entire div */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    color: var(--white); /* Text color if there was text, but replaced with image */
+    font-weight: 700;
+    padding: 0; /* Remove padding as it's now an image container */
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex; /* Kept for centering potential text if no image, but not strictly needed with background-image */
+    align-items: center; /* Kept for centering potential text */
+    justify-content: center; /* Kept for centering potential text */
+    font-size: 1.6rem; /* Kept for potential text */
+    box-shadow: 0 4px 10px var(--shadow-medium);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-transform: uppercase;
+    text-decoration: none;
+    overflow: hidden; /* Crucial for clipping to circle if the image aspect ratio is off */
+}
+
+
+.logo:hover {
+    transform: scale(1.08) rotate(5deg);
+    background-color: #43A047;
+}
+/* End Logo Styling */
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem; /* Use gap for spacing */
+}
+
+.nav-links a {
+    color: var(--text-dark);
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px var(--shadow-light);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: var(--primary-green);
+    color: var(--white);
+    border-color: var(--primary-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-medium);
+}
+
+.footer-buttons {
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-direction: column; /* Stack footer buttons */
+}
+.footer-buttons button {
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    width: 80%; /* Make stacked buttons wider */
+    max-width: 250px; /* Limit max width for stacked buttons */
+}
+
+/* --- Header Section --- */
+header {
+    text-align: center;
+    background: linear-gradient(to right, var(--dark-green), #386641);
+    color: var(--white);
+    padding: 2.5rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    margin: 0;
+    font-size: inherit;
+}
+
+/* --- Main Content Sections --- */
+main {
+    flex-grow: 1; /* Allows main content to take available space */
+    padding: 3rem 1.5rem; /* Add padding to main content */
+    max-width: 1000px; /* Limit width for better readability */
+    margin: 0 auto; /* Center the main content */
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--light-gray); /* Background for main content area */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px var(--shadow-light);
+    margin-top: 2rem; /* Spacing from header */
+    margin-bottom: 2rem; /* Spacing to footer */
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--dark-green);
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* --- Calendar Specific Styling (Example - You'll expand this for full calendar functionality) --- */
+.calendar-container {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px var(--shadow-medium);
+    text-align: center;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    color: var(--calendar-dark-text);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--calendar-primary-color);
+    transition: transform 0.2s ease;
+}
+
+.calendar-header button:hover {
+    transform: scale(1.1);
+}
+
+.days-of-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    color: var(--calendar-dark-text);
+}
+
+.days-of-week div {
+    padding: 0.5rem;
+    background-color: var(--calendar-light-gray);
+    border-radius: 5px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-day {
+    padding: 0.8rem 0.5rem;
+    border: 1px solid var(--calendar-border);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    position: relative; /* For event dots */
+    min-height: 80px; /* Ensure enough space for content and dots */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+}
+.calendar-day-number {
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+
+.calendar-day:hover {
+    background-color: var(--calendar-hover-bg);
+}
+
+.calendar-day.empty {
+    background-color: var(--calendar-medium-gray);
+    cursor: default;
+}
+
+.calendar-day.today {
+    border: 2px solid var(--calendar-today-border);
+    font-weight: 700;
+}
+
+.calendar-day.selected {
+    background-color: var(--calendar-selected-bg);
+    color: var(--white);
+    font-weight: 700;
+}
+
+.event-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--primary-green);
+    border-radius: 50%;
+    margin-top: 3px;
+}
+.event-dot.assignment { background-color: #e65100; } /* Orange for assignments */
+.event-dot.event { background-color: #1976d2; } /* Blue for general events */
+
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-button {
+    color: var(--text-dark);
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--primary-green);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h3 {
+    color: var(--dark-green);
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea,
+.form-group select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--primary-green);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.modal-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.modal-buttons .add-button {
+    background-color: var(--primary-green);
+    color: var(--white);
+}
+
+.modal-buttons .add-button:hover {
+    background-color: #43A047;
+    transform: translateY(-1px);
+}
+
+.modal-buttons .cancel-button {
+    background-color: var(--light-gray);
+    color: var(--text-dark);
+    border: 1px solid var(--border-color);
+}
+
+.modal-buttons .cancel-button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Event Details Modal */
+#eventDetailsModal .event-info p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+#eventDetailsModal .event-info strong {
+    color: var(--dark-green);
+}
+#eventDetailsModal .event-info pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: var(--light-gray);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    max-height: 150px;
+    overflow-y: auto;
+    font-size: 0.95rem;
+}
+#eventDetailsModal .delete-button {
+    background-color: #d32f2f;
+    color: white;
+}
+#eventDetailsModal .delete-button:hover {
+    background-color: #c62828;
+}
+
+/* Floating Action Button */
+.fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--primary-green);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px var(--shadow-medium);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 900;
+}
+
+.fab:hover {
+    background-color: #43A047;
+    transform: translateY(-5px) rotate(5deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav {
+        padding: 0.6rem 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links {
+        margin-top: 0.5rem;
+        justify-content: center;
+    }
+    .nav-links a {
+        margin: 0.3rem;
+        padding: 0.5rem 1rem;
+    }
+    .logo {
+        width: 60px; /* Adjusted for smaller screens */
+        height: 60px; /* Adjusted for smaller screens */
+        margin-bottom: 0.5rem;
+    }
+    header {
+        padding: 2rem 0;
+        font-size: 2rem;
+    }
+    main {
+        padding: 2rem 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    .calendar-container {
+        padding: 1rem;
+    }
+    .calendar-header {
+        font-size: 1.2rem;
+    }
+    .calendar-header button {
+        font-size: 1.5rem;
+    }
+    .calendar-day {
+        padding: 0.6rem 0.3rem;
+        font-size: 0.85rem;
+        min-height: 60px; /* Adjust for smaller screens */
+    }
+    .modal-content {
+        padding: 20px;
+    }
+    .modal-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    .fab {
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-links a {
+        width: calc(100% - 2rem); /* Make nav links full width minus padding */
+        text-align: center;
+    }
+    .calendar-day {
+        font-size: 0.75rem;
+        min-height: 50px;
+    }
+    .event-dot {
+        width: 5px;
+        height: 5px;
+    }
+}
+
+/* --- Footer Styles --- */
+footer {
+    background-color: var(--dark-green); /* Dark green background as seen in the image */
+    color: var(--white); /* White text */
+    text-align: center; /* Center the text */
+    padding: 1.2rem 0; /* Vertical padding */
+    margin-top: auto; /* Push footer to the bottom of the page */
+    font-size: 0.9em; /* Adjust font size */
+    box-shadow: 0 -4px 8px var(--shadow-light); /* Optional: subtle shadow at the top of the footer */
+}

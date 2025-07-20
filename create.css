@@ -1,0 +1,292 @@
+/* Aesthetic Color Palette & Typography Variables */
+:root {
+    --primary-green: #4CAF50; /* A vibrant green for accents */
+    --secondary-green: #BEDE8D; /* Light green for backgrounds */
+    --dark-green: #2E5B31; /* Dark green for text/footer */
+    --light-gray: #f4f4f4; /* Subtle background for sections */
+    --white: #fff;
+    --text-dark: #333;
+    --text-light: #666;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --border-color: #ddd;
+
+    /* Calendar specific variables (adapted from previous blue to green) */
+    --calendar-primary-color: var(--primary-green);
+    --calendar-dark-color: var(--dark-green);
+    --calendar-light-gray: #f3f2f1; /* Slightly different gray for calendar elements */
+    --calendar-medium-gray: #edebe9;
+    --calendar-dark-text: #323130;
+    --calendar-border: #e1e1e1;
+    --calendar-hover-bg: #f3f2f1;
+    --calendar-selected-bg: var(--primary-green); /* Selected date background */
+    --calendar-today-border: var(--primary-green); /* Border for today's date */
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif; /* Using Roboto from Google Fonts */
+    background-color: var(--secondary-green); /* Consistent light green background */
+    display: flex; /* For pushing footer to bottom */
+    flex-direction: column; /* For pushing footer to bottom */
+    min-height: 100vh; /* For pushing footer to bottom */
+    color: var(--text-dark); /* Default text color */
+}
+
+/* --- Top Bar (replaces navigation) --- */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-green);
+    padding: 0.8rem 2rem;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    flex-wrap: wrap;
+}
+
+.back-icon {
+    font-size: 2rem;
+    color: var(--dark-green);
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-icon:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: translateX(-5px);
+}
+
+.logo-placeholder {
+    background-image: url('https://scontent.fmnl17-2.fna.fbcdn.net/v/t39.30808-1/510343138_122229514226162784_3813583714701362691_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=107&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeHDjVgER4yF4uE1fgfByrh7g8qWIea_qr2DypYh5r-qvb-V_6NIn5gHRhY0pGi7QrAR_-hoVQTnDR4uyyy_W7n7&_nc_ohc=IlYcSNY8BkgQ7kNvwEwQk2T&_nc_oc=Adnpwycbhd-cayH3_Qw_H-ZoKambEb2RsmIAiO44b09X1w9EsJa6E1gE7tL4rrqSLc&_nc_zt=24&_nc_ht=scontent.fmnl17-2.fna&_nc_gid=kvf0KiqokdJDra3gNnQmhQ&oh=00_AfTMc4m-zN6ulxD2a9ZPhwq6-zLRtva-lAUCRf-mHtXVjQ&oe=6878FDB6');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    box-shadow: 0 4px 10px var(--shadow-medium);
+}
+
+/* --- Header Section --- */
+header {
+    text-align: center;
+    background: linear-gradient(to right, var(--dark-green), #386641);
+    color: var(--white);
+    padding: 2.5rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    margin: 0;
+    font-size: inherit;
+}
+
+/* --- Main Content Sections (General for main content areas) --- */
+main {
+    flex-grow: 1; /* Allows main content to take available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align content to start for forms */
+    padding: 3rem 1.5rem;
+    text-align: center;
+    max-width: 1000px; /* Adjusted max-width for overall content */
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- Create Class Form Specific Styles --- */
+.create-class-form {
+    background-color: var(--white);
+    max-width: 500px;
+    width: 100%;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px var(--shadow-medium);
+    text-align: left;
+}
+
+.create-class-form h2 {
+    text-align: center;
+    color: var(--dark-green);
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.create-class-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.create-class-form label {
+    display: block;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 1.05rem;
+}
+
+.create-class-form input[type="text"],
+.create-class-form input[type="url"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--light-gray);
+    color: var(--text-dark);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.create-class-form input[type="text"]:focus,
+.create-class-form input[type="url"]:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    outline: none;
+}
+
+.create-class-form button[type="submit"] {
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px var(--shadow-medium);
+    margin-top: 10px;
+}
+
+.create-class-form button[type="submit"]:hover {
+    background-color: #43A047;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px var(--shadow-medium);
+}
+
+#messageBox {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    display: none;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Styles for the generated class code display */
+#classCodeDisplay {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#classCodeDisplay p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--dark-green);
+}
+
+#generatedClassCode {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--primary-green);
+    background-color: var(--white);
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: 2px dashed var(--primary-green);
+    letter-spacing: 2px;
+    user-select: all;
+}
+
+#copyCodeBtn {
+    background-color: var(--dark-green);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px var(--shadow-light);
+}
+
+#copyCodeBtn:hover {
+    background-color: #2e4d34;
+    transform: translateY(-1px);
+}
+
+/* --- Footer Styles --- */
+footer {
+    margin-top: auto;
+    text-align: center;
+    background-color: var(--dark-green);
+    color: var(--white);
+    padding: 1.5rem;
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .top-bar {
+        padding: 0.6rem 1rem;
+        flex-direction: row; /* Keep row direction for back button and logo */
+        justify-content: space-between;
+        align-items: center;
+    }
+    .back-icon {
+        font-size: 1.8rem;
+        padding: 0.4rem;
+    }
+    .logo-placeholder {
+        width: 45px;
+        height: 45px;
+    }
+    header {
+        padding: 2rem 0;
+        font-size: 2rem;
+    }
+    main {
+        padding: 2rem 1rem;
+    }
+    .create-class-form {
+        padding: 20px;
+        margin: 30px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar {
+        padding: 0.5rem 0.8rem;
+    }
+    .back-icon {
+        font-size: 1.6rem;
+    }
+    .logo-placeholder {
+        width: 40px;
+        height: 40px;
+    }
+}

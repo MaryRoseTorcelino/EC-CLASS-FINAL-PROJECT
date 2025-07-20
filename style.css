@@ -1,0 +1,258 @@
+:root {
+    --primary-green: #4CAF50;
+    --secondary-green: #BEDE8D;
+    --dark-green: #2E5B31;
+    --light-gray: #f4f4f4;
+    --white: #fff;
+    --text-dark: #333;
+    --text-light: #666;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --border-color: #ddd;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #D3F9A7; /* Light green background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    color: var(--text-dark); /* Ensure text color is still applied */
+    overflow: hidden; /* Added to prevent scrolling for split layout */
+    width: 100vw; /* Added for split layout */
+}
+
+/* Main container for the split layout */
+.split-layout {
+    display: flex;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Left half for the background image */
+.background-half {
+    flex: 1; /* Takes half the width */
+    background-image: url('../images/ECCLASS.jpg'); /* Your local image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex; /* Use flex to center content if any */
+    align-items: center;
+    justify-content: center;
+    /* Hide on small screens */
+    display: none;
+}
+
+/* Show background half on medium and larger screens */
+@media (min-width: 768px) {
+    .background-half {
+        display: flex;
+    }
+}
+
+/* Right half for the signup form */
+.form-half {
+    flex: 1; /* Takes half the width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-green); /* Background for the form side */
+    padding: 20px; /* Add some padding for smaller screens */
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #4CAF50; /* Darker green container */
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.logo-circle {
+    background-color: #66BB6A; /* Slightly lighter green for the circle */
+    border-radius: 50%;
+    width: 70px; /* Default for index, adjusted in specific pages if needed */
+    height: 70px; /* Default for index, adjusted in specific pages if needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    font-weight: bold;
+    font-size: 1.2em; /* Default for index, adjusted in specific pages if needed */
+}
+
+/* Specific styles for index.html */
+.container.index-page h1 {
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+.container.index-page p {
+    font-size: 0.9em;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.container.index-page .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.button {
+    background-color: #66BB6A; /* Button green */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #5cb85c;
+}
+
+/* Specific styles for Signup and Login pages */
+.container.auth-page {
+    background-color: var(--white); /* Reverted to white as per original auth-page style */
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow-medium);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    color: var(--text-dark); /* Ensure text color is applied */
+}
+
+.container.auth-page .logo-circle {
+    width: 70px; /* Reverted to 70px for consistency with login/signup */
+    height: 70px; /* Reverted to 70px for consistency with login/signup */
+    font-size: 2rem; /* Reverted to 2rem for consistency with login/signup */
+    margin: -70px auto 30px auto; /* Reverted for consistency */
+    position: relative; /* Reverted for consistency */
+    z-index: 1; /* Reverted for consistency */
+    background-color: var(--primary-green); /* Use primary green */
+    color: var(--white);
+    font-weight: 700;
+    padding: 0.6rem;
+    box-shadow: 0 4px 10px var(--shadow-medium);
+}
+
+.container.auth-page h2 {
+    margin-bottom: 25px;
+    font-size: 2rem; /* Reverted to 2rem */
+    text-transform: none; /* Removed uppercase */
+    color: var(--dark-green); /* Use dark green */
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group input { /* Combined input types */
+    width: calc(100% - 24px); /* Adjust for padding and border */
+    padding: 12px;
+    border: 1px solid var(--border-color); /* Use border-color variable */
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--white); /* Use white variable */
+    color: var(--text-dark);
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-green); /* Use primary green */
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2); /* Use primary green rgba */
+}
+
+.auth-button {
+    background-color: var(--primary-green); /* Use primary green */
+    color: var(--white);
+    padding: 1rem 2rem; /* Reverted to 1rem 2rem */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem; /* Reverted to 1.1rem */
+    font-weight: 700;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px var(--shadow-medium);
+}
+
+.auth-button:hover {
+    background-color: #43A047; /* Darker primary green */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px var(--shadow-medium);
+}
+
+.auth-link {
+    margin-top: 25px; /* Reverted to 25px */
+    font-size: 0.95rem; /* Reverted to 0.95rem */
+    color: var(--text-light); /* Use text-light */
+}
+
+.auth-link a {
+    color: var(--primary-green); /* Use primary green */
+    text-decoration: none;
+    font-weight: 600; /* Reverted to 600 */
+    transition: color 0.3s ease;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+    color: var(--dark-green); /* Use dark green */
+}
+
+.message-box {
+    background-color: #ffe0b2;
+    color: #e65100;
+    border: 1px solid #ffb74d;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    text-align: left;
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .container.auth-page {
+        padding: 30px 20px;
+    }
+    .logo-circle {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+        margin-top: -60px;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    .form-group input {
+        padding: 10px;
+    }
+    .auth-button {
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
+    }
+}

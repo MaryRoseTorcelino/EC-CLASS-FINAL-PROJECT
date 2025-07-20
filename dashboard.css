@@ -1,0 +1,493 @@
+ /* Aesthetic Color Palette & Typography Variables */
+ :root {
+    --primary-green: #4CAF50; /* A vibrant green for accents */
+    --secondary-green: #BEDE8D; /* Light green for backgrounds */
+    --dark-green: #2E5B31; /* Dark green for text/footer */
+    --light-gray: #f4f4f4; /* Subtle background for sections */
+    --white: #fff;
+    --text-dark: #333;
+    --text-light: #666;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --border-color: #ddd;
+
+    /* Calendar specific variables (adapted from previous blue to green) */
+    --calendar-primary-color: var(--primary-green);
+    --calendar-dark-color: var(--dark-green);
+    --calendar-light-gray: #f3f2f1; /* Slightly different gray for calendar elements */
+    --calendar-medium-gray: #edebe9;
+    --calendar-dark-text: #323130;
+    --calendar-border: #e1e1e1;
+    --calendar-hover-bg: #f3f2f1;
+    --calendar-selected-bg: var(--primary-green); /* Selected date background */
+    --calendar-today-border: var(--primary-green); /* Border for today's date */
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif; /* Using Roboto from Google Fonts */
+    background-color: var(--secondary-green); /* Consistent light green background */
+    display: flex; /* For pushing footer to bottom */
+    flex-direction: column; /* For pushing footer to bottom */
+    min-height: 100vh; /* For pushing footer to bottom */
+    color: var(--text-dark); /* Default text color */
+}
+
+/* --- Navigation Bar --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-green);
+    padding: 0.8rem 2rem;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    flex-wrap: wrap; /* Allow nav items to wrap */
+}
+
+
+.logo {
+    background-color: var(--primary-green);
+    /* Set the background image for the logo */
+    background-image: url('https://scontent.fmnl17-2.fna.fbcdn.net/v/t39.30808-1/510343138_122229514226162784_3813583714701362691_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=107&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeHDjVgER4yF4uE1fgfByrh7g8qWIea_qr2DypYh5r-qvb-V_6NIn5gHRhY0pGi7QrAR_-hoVQTnDR4uyyy_W7n7&_nc_ohc=IlYcSNY8BkgQ7kNvwEwQk2T&_nc_oc=Adnpwycbhd-cayH3_QwE_H-ZoKambEb2RsmIAiO44b09X1w9EsJa6E1gE7tL4rrqSLc&_nc_zt=24&_nc_ht=scontent.fmnl17-2.fna&_nc_gid=kvf0KiqokdJDra3gNnQmhQ&oh=00_AfTMc4m-zN6ulxD2a9ZPhwq6-zLRtva-lAUCRf-mHtXVjQ&oe=6878FDB6');
+    background-size: cover; /* Make the image cover the entire div */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    color: var(--white); /* Text color if there was text, but replaced with image */
+    font-weight: 700;
+    padding: 0; /* Remove padding as it's now an image container */
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex; /* Kept for centering potential text if no image, but not strictly needed with background-image */
+    align-items: center; /* Kept for centering potential text */
+    justify-content: center; /* Kept for centering potential text */
+    font-size: 1.6rem; /* Kept for potential text */
+    box-shadow: 0 4px 10px var(--shadow-medium);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-transform: uppercase;
+    text-decoration: none;
+    overflow: hidden; /* Crucial for clipping to circle if the image aspect ratio is off */
+}
+
+
+.logo:hover {
+    transform: scale(1.08) rotate(5deg);
+    background-color: #43A047;
+}
+/* End Logo Styling */
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem; /* Use gap for spacing */
+}
+
+.nav-links a {
+    color: var(--text-dark);
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px var(--shadow-light);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: var(--primary-green);
+    color: var(--white);
+    border-color: var(--primary-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-medium);
+}
+
+/* --- Header Section --- */
+header {
+    text-align: center;
+    background: linear-gradient(to right, var(--dark-green), #386641);
+    color: var(--white);
+    padding: 2.5rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    margin: 0;
+    font-size: inherit;
+}
+
+/* --- Main Content Sections --- */
+main {
+    flex-grow: 1; /* Allows main content to take available space */
+}
+
+.class-section,
+.about-section,
+.developers-section,
+.calendar-section { /* Added calendar-section here */
+    padding: 3rem 1.5rem;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--dark-green);
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+/* --- Classes Section --- */
+.create-class-btn {
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 0.9rem 1.8rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none; /* Make it look like a button but act as a link */
+    display: inline-block;
+    margin-bottom: 2rem;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px var(--shadow-medium);
+}
+
+.create-class-btn:hover {
+    background-color: #43A047;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px var(--shadow-medium);
+}
+
+.classes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.class-card {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px var(--shadow-medium);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Make cards flex containers */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Distribute space */
+}
+
+.class-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px var(--shadow-medium);
+}
+
+.class-card h3 {
+    margin-top: 0;
+    color: var(--dark-green);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.class-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover; /* Changed to cover for better image display */
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.class-card .join-class-btn {
+    background-color: var(--primary-green);
+    color: var(--white);
+    border: none;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: auto; /* Pushes button to the bottom of the card */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px var(--shadow-light);
+}
+
+.class-card .join-class-btn:hover {
+    background-color: #43A047;
+    transform: translateY(-2px);
+}
+
+/* --- About Section --- */
+.about-section {
+    background-color: var(--light-gray); /* Added a subtle background for contrast */
+    border-radius: 15px;
+    margin: 3rem auto;
+    padding: 3rem 1.5rem;
+    box-shadow: 0 8px 20px var(--shadow-light);
+}
+
+.about-section p {
+    max-width: 800px;
+    margin: 1.5rem auto;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-light);
+}
+
+.about-section img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px var(--shadow-medium);
+    transition: transform 0.3s ease;
+}
+
+.about-section img:hover {
+    transform: scale(1.02);
+}
+
+/* --- Developers Section --- */
+.developers-section {
+    background-color: var(--secondary-green);
+    padding: 3rem 1.5rem;
+    border-radius: 15px;
+    margin: 3rem auto;
+    box-shadow: 0 10px 30px var(--shadow-medium);
+    /* Aesthetic Enhancement: Subtle background pattern */
+    background-image: linear-gradient(45deg, var(--secondary-green) 25%, transparent 25%),
+                      linear-gradient(-45deg, var(--secondary-green) 25%, transparent 25%),
+                      linear-gradient(45deg, transparent 75%, var(--secondary-green) 75%),
+                      linear-gradient(-45deg, transparent 75%, var(--secondary-green) 75%);
+    background-size: 40px 40px; /* Size of the pattern */
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0px; /* Offset for better pattern */
+}
+
+.developers-section h2 {
+    color: var(--dark-green);
+    position: relative; /* For the underline effect */
+    padding-bottom: 10px;
+}
+
+.developers-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-green);
+    border-radius: 2px;
+}
+
+.dev-cards {
+    display: grid;
+    /* Adjusted grid-template-columns to accommodate larger cards */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+    max-width: 900px; /* Increased max-width for developer cards container */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dev-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 1.5rem; /* Increased padding for larger cards */
+    box-shadow: 0 6px 15px var(--shadow-light);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dev-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px var(--shadow-medium);
+    background-color: var(--light-gray);
+}
+
+.dev-card img {
+    /* Removed border-radius: 50% to make it rectangular */
+    border-radius: 8px; /* Added slight border-radius for aesthetics */
+    width: 100%; /* Make image fill card width */
+    max-width: 180px; /* Set a max-width for images within cards */
+    height: 180px; /* Increased height for larger images */
+    object-fit: cover;
+    border: 4px solid var(--primary-green);
+    box-shadow: 0 2px 8px var(--shadow-light);
+    margin-bottom: 1rem; /* Adjusted margin */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.dev-card:hover img {
+    transform: scale(1.05);
+    filter: saturate(1.2);
+}
+
+.dev-card p {
+    margin: 0;
+    font-size: 1.1rem; /* Slightly larger font for names */
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.dev-card .social-icon {
+    color: #3b5998; /* Facebook blue */
+    font-size: 1.8rem; /* Larger social icon */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.dev-card .social-icon:hover {
+    color: #2a3d6d; /* Darker blue on hover */
+    transform: scale(1.2);
+}
+
+.footer-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.footer-buttons button {
+    background-color: var(--dark-green);
+    color: var(--white);
+    border: none;
+    padding: 0.9rem 1.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px var(--shadow-medium);
+}
+
+.footer-buttons button:hover {
+    background-color: #2e4d34;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px var(--shadow-medium);
+}
+
+/* --- Footer --- */
+footer {
+    margin-top: auto;
+    text-align: center;
+    background-color: var(--dark-green);
+    color: var(--white);
+    padding: 1.5rem;
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav {
+        padding: 0.6rem 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links {
+        margin-top: 0.5rem;
+        justify-content: center;
+    }
+    .nav-links a {
+        margin: 0.3rem;
+        padding: 0.5rem 1rem;
+    }
+    .logo {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+    header {
+        padding: 2rem 0;
+        font-size: 2rem;
+    }
+    .class-section,
+    .about-section,
+    .developers-section {
+        padding: 2rem 1rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    .classes {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
+    }
+    .class-card {
+        padding: 1rem;
+    }
+    .class-card img {
+        height: 100px;
+    }
+    .about-section p {
+        font-size: 1rem;
+    }
+    .about-section img {
+        margin-top: 1.5rem;
+    }
+    .dev-cards {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Adjusted for smaller screens */
+        gap: 1.5rem;
+    }
+    .dev-card img {
+        width: 100%;
+        max-width: 140px; /* Adjusted max-width for smaller images */
+        height: 140px; /* Adjusted height for smaller images */
+    }
+    .footer-buttons {
+        gap: 1rem;
+        margin-top: 2rem;
+        flex-direction: column; /* Stack footer buttons */
+    }
+    .footer-buttons button {
+        padding: 0.7rem 1.2rem;
+        font-size: 1rem;
+        width: 80%; /* Make stacked buttons wider */
+        max-width: 250px; /* Limit max width for stacked buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-links a {
+        width: calc(100% - 2rem); /* Make nav links full width minus padding */
+        text-align: center;
+    }
+    .dev-cards {
+        grid-template-columns: 1fr; /* Stack cards on very small screens */
+    }
+    .dev-card img {
+        width: 100%;
+        max-width: 160px; /* Adjust max-width for single column layout */
+        height: 160px;
+    }
+}
