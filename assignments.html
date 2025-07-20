@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EC Classroom - Assignments</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/assignment.css">
+
+</head>
+<body>
+
+    <nav>
+        <div class="logo" aria-label="EC Classroom Logo"></div>
+        <div class="nav-links" role="navigation" aria-label="Main Navigation">
+            <a href="dashboard.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="profile.html">Profile</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="login.html" id="logoutLink">Logout</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1 id="pageHeader">MY ASSIGNMENTS</h1>
+    </header>
+
+    <main>
+        <section class="assignment-section" aria-labelledby="add-assignment-heading">
+            <h2 id="add-assignment-heading">Create a New Assignment</h2>
+            <div class="form-container">
+                <form id="assignmentForm">
+                    <input type="hidden" id="assignmentId"> <div class="form-group">
+                        <label for="assignmentTitle">Assignment Title:</label>
+                        <input type="text" id="assignmentTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dueDate">Due Date:</label>
+                        <input type="date" id="dueDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dueTime">Due Time (Optional):</label>
+                        <input type="time" id="dueTime">
+                    </div>
+                    <div class="form-group">
+                        <label for="assignmentDescription">Description (Optional):</label>
+                        <textarea id="assignmentDescription"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status:</label>
+                        <select id="status">
+                            <option value="pending">Pending</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="cancel-button" id="cancelEditBtn" style="display: none;">Cancel Edit</button>
+                        <button type="submit" class="submit-button" id="submitAssignmentBtn">Add Assignment</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="assignment-list-section" aria-labelledby="list-assignment-heading">
+            <h2 id="list-assignment-heading">My Assignments</h2>
+            <div class="assignment-list-container">
+                <div id="assignmentsContainer">
+                    <p id="noAssignmentsMessage">No assignments found. Add one above!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 EC Classroom. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="js/assignment.js"></script>
+
+</body>
+</html>

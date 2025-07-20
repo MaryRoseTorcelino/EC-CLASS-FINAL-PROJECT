@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EC Classroom - Class Conversation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/conversation.css"> <!-- Specific styles for this page -->
+</head>
+<body>
+
+    <nav>
+        <div class="logo" aria-label="EC Classroom Logo"></div>
+        <div class="nav-links" role="navigation" aria-label="Main Navigation">
+            <a href="dashboard.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="profile.html">Profile</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="login.html" id="logoutLink">Logout</a>
+        </div>
+    </nav>
+
+    <header class="header-banner">
+        <a href="dashboard.html" class="back-icon" aria-label="Go back to Dashboard">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <h1 id="classHeaderTitle">Loading Class...</h1>
+    </header>
+
+    <main class="content">
+        <section class="conversation-section" aria-labelledby="conversation-heading">
+            <h2 id="conversation-heading">Class Discussion</h2>
+            <div class="messages-container" id="messagesContainer">
+                <!-- Messages will be loaded here -->
+                <p class="loading-messages">Loading messages...</p>
+            </div>
+            <div class="message-input-area">
+                <input type="text" id="messageInput" placeholder="Type your message...">
+                <button id="sendMessageBtn">Send</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 EC Classroom. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="js/class_conversation.js"></script>
+</body>
+</html>

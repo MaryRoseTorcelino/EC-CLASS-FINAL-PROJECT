@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EC Classroom - Events</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/events.css">
+
+</head>
+<body>
+
+    <nav>
+        <div class="logo" aria-label="EC Classroom Logo"></div>
+        <div class="nav-links" role="navigation" aria-label="Main Navigation">
+            <a href="dashboard.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="profile.html">Profile</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="login.html" id="logoutLink">Logout</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1 id="pageHeader">MY EVENTS</h1>
+    </header>
+
+    <main>
+        <section class="event-section" aria-labelledby="add-event-heading">
+            <h2 id="add-event-heading">Create a New Event</h2>
+            <div class="form-container">
+                <form id="eventForm">
+                    <input type="hidden" id="eventId">
+                    <div class="form-group">
+                        <label for="eventTitle">Event Title:</label>
+                        <input type="text" id="eventTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventDate">Date:</label>
+                        <input type="date" id="eventDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventTime">Time (Optional):</label>
+                        <input type="time" id="eventTime">
+                    </div>
+                    <div class="form-group">
+                        <label for="eventDescription">Description (Optional):</label>
+                        <textarea id="eventDescription"></textarea>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="cancel-button" id="cancelEditBtn" style="display: none;">Cancel Edit</button>
+                        <button type="submit" class="submit-button" id="submitEventBtn">Add Event</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="event-list-section" aria-labelledby="list-event-heading">
+            <h2 id="list-event-heading">Upcoming Events</h2>
+            <div class="event-list-container">
+                <div id="eventsContainer">
+                    <p id="noEventsMessage">No events found. Add one above!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 EC Classroom. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="js/events.js"></script>
+
+</body>
+</html>

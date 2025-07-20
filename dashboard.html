@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EC Classroom - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo" aria-label="EC Classroom Logo">
+        </div>
+        <div class="nav-links" role="navigation" aria-label="Main Navigation">
+            <a href="dashboard.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="profile.html">Profile</a>
+            <a href="calendar.html">Calendar</a> 
+            <a href="login.html" id="logoutLink">Logout</a>
+        </div>
+    </nav>
+    <header>
+        <h1 id="welcomeMessage">WELCOME TO EC CLASSROOM!</h1>
+    </header>
+
+    <main>
+        <section class="class-section" aria-labelledby="classes-heading">
+            <h2 id="classes-heading">List of Classes</h2>
+            <a href="create_class.html" class="create-class-btn">+ CREATE NEW CLASS</a>
+            <div class="classes" id="classesContainer">
+            </div>
+        </section>
+
+        <section class="about-section" id="about" aria-labelledby="about-heading">
+            <h2 id="about-heading">ABOUT US</h2>
+            <p style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+                EC Class is a user-friendly tool designed to simplify academic life for Educators, Students, and Staff.
+                Whether you're a student tracking assignments, a teacher managing deadlines, or a team coordinating events,
+                our platform helps keep everything organized in one place. We aim to streamline communication and enhance
+                the learning experience for everyone involved.
+            </p>
+            <img src="https://www.shutterstock.com/image-vector/educational-web-seminar-internet-classes-600nw-2185213275.jpg" alt="Electronic Classroom">
+
+        <section class="developers-section" aria-labelledby="developers-heading">
+            <h2 id="developers-heading">THE DEVELOPERS</h2>
+            <div class="dev-cards">
+                <a href="https://www.facebook.com/loveeeeeyyyy" target="_blank" class="dev-card">
+                    <img src="https://scontent.fmnl17-8.fna.fbcdn.net/v/t39.30808-1/479167033_598205143050907_6822378794092661007_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=104&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeH8I3JeAR6j1vYHuU2-qAhgE_j8j7ycNaoT-PyPvJw1quLW0Lz1ZaT2-KTGKsvBz83CabfgceCrCqGxzFLzNEAh&_nc_ohc=FPbiaDEN_rgQ7kNvwGckExo&_nc_oc=AdnlzdMmybT9uzcz2qthE5wJfgx7BSuE2mt6HE9NgEkCaom0WLHDGDXvH9j2R2XhqfU&_nc_zt=24&_nc_ht=scontent.fmnl17-8.fna&_nc_gid=jBuu4nM-rq-kUbPgiiRThQ&oh=00_AfTQ3A27uaWzqnf3yFMsQ6wjO13ISca5aBZQVMJDeLMWRA&oe=6879186A" alt="Developer 1">
+                    <p>Mary Rose L. Torcelino</p>
+                    <i class="fab fa-facebook-square social-icon" aria-label="Facebook Profile"></i>
+                </a>
+                <a href="https://www.facebook.com/iam.lykhamae12" target="_blank" class="dev-card">
+                    <img src="https://scontent.fmnl34-1.fna.fbcdn.net/v/t39.30808-1/518886904_2171493033353773_2843606580408766262_n.jpg?stp=dst-jpg_s160x160_tt6&_nc_cat=101&cb=99be929b-ca288af0&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeHOn3Uf3WkXjEN1wCOTGj0Y6D8GPsoiyd_oPwY-yiLJ33eQeQeL2bAys10fRflnfgKFDIlZ8sc-fjJFipb0w4ZQ&_nc_ohc=i12k9IaT3zEQ7kNvwEdKZU-&_nc_oc=AdlBhns7zB5FcSLnmCPhr7Lv-jWAKD8-awfP-NW-ev6eQo9tr0CxYPNlCmJ9XKqOuMI&_nc_zt=24&_nc_ht=scontent.fmnl34-1.fna&_nc_gid=mrJNMDuHv20E_XZ15KeUvg&oh=00_AfTArh77pKLkTNI8F4rB7xytJhY6GwKPDbJYn3cAd23yIw&oe=68796E14" alt="Developer 2">
+                    <p> Lykha Ballesteros </p>
+                    <i class="fab fa-facebook-square social-icon" aria-label="Facebook Profile"></i>
+                </a>
+                <a href="https://www.facebook.com/john.mark.canja.147134" target="_blank" class="dev-card">
+                    <img src="https://scontent.fmnl34-1.fna.fbcdn.net/v/t39.30808-1/518296638_761372559664465_6634080712879457541_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=108&cb=99be929b-ca288af0&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeH-gIPlY1kammw6Yw4PymyuE5Iw9JejoG0TkjD0l6OgbYD4RbmK-fGJ6u7EIjgPLUT_t35CSqcslKDjhfHwIwiz&_nc_ohc=51xnA8yBANgQ7kNvwHBoWya&_nc_oc=AdlEXxHfDk1PnjYHhOjDvctv4EKH1aoaL0n3uYJj4FOzDfMq4ZXhMdie_CpVFcDf9Zc&_nc_zt=24&_nc_ht=scontent.fmnl34-1.fna&_nc_gid=eAnkTJb08rd_xy721jCtJg&oh=00_AfRlL9w_tXIdXBIJCUlHMQ-tSxq_1z0PizDlDOKW86WWDg&oe=68799023" alt="Developer 3">
+                    <p>John Mark Canja </p>
+                    <i class="fab fa-facebook-square social-icon" aria-label="Facebook Profile"></i>
+                </a>
+                <a href="https://www.facebook.com/urmarcedmnd" target="_blank" class="dev-card">
+                    <img src="https://scontent.fmnl17-3.fna.fbcdn.net/v/t39.30808-6/486792563_2443446442674337_4733853661925308666_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=106&cb=99be929b-ca288af0&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFFGNH8R5CsvW11SHb181AbxLKanI3RQazEspqcjdFBrJWJeUmBCG63jJAZ9k4hsINcpfoDKufH9zv30NKeKJM9&_nc_ohc=88nJC230DqAQ7kNvwEE1-pz&_nc_oc=AdlKDj02-mAC6ZYZUaVoShQEhr57TgQUPaBAqA2dAtdjC3GFESPVZ5eh2d8k-GwF7r0&_nc_zt=23&_nc_ht=scontent.fmnl17-3.fna&_nc_gid=WOzkupwY8j9SHylmIKWjTQ&oh=00_AfSKf-6g9ktly3bYGBtFVqIBIh3sAZw7neFnqAqUiEcaTQ&oe=68797472" alt="Developer 4">
+                    <p>Marc Edmund Khe </p>
+                    <i class="fab fa-facebook-square social-icon" aria-label="Facebook Profile"></i>
+                </a>
+                <a href="https://www.facebook.com/micaela.petalio.31" target="_blank" class="dev-card">
+                    <img src="https://scontent.fmnl17-7.fna.fbcdn.net/v/t39.30808-1/469431494_1651575609089802_4376783136706757212_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=108&cb=99be929b-ca288af0&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeFw5k1RFYFPI0M1smexHlzURjzgsCPH77BGPOCwI8fvsOYAOBkT5Apr3JNZ-m_Hdp0lVzHiXBzsRZC_LtoUwE9Q&_nc_ohc=jZSfphqQ8QQQ7kNvwFdipvR&_nc_oc=AdmSIH1wR2pCexofgq1xnXZizhvOrukmixheH1jmeW0Sjacnt9VBDbWrcMkbJkupD8g&_nc_zt=24&_nc_ht=scontent.fmnl17-7.fna&_nc_gid=UlqYz7NmAjhhK33yQL2Yag&oh=00_AfRc3pn9VdpUQf-YXRE_PZzMADQX0kZ1S6RYhWWqeBZazA&oe=68797A89" alt="Developer 5">
+                    <p>Micaela Petalio </p>
+                    <i class="fab fa-facebook-square social-icon" aria-label="Facebook Profile"></i>
+                </a>
+                <a href="
+                You sent
+                https://www.facebook.com/profile.php?id=61577889003623" target="_blank" class="dev-card">
+                    <img src="https://scontent.fmnl17-5.fna.fbcdn.net/v/t39.30808-1/514277922_122099807792929633_315563569965673952_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=110&cb=99be929b-ca288af0&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeEynX_AuRUEGs648qqZbogsmVSDnLFDA52ZVIOcsUMDnWnNMlhdmnLrZAFSC3gVWmJZKFZB5fb9ZEeu6YNhIWss&_nc_ohc=JyZjT9uXc-EQ7kNvwFnCUyH&_nc_oc=AdlmT-KaXuuYlgQ5Jfslxdj6iyeoZnJaYH5cZ4Uaxe9enq15S19z7sULGdD0oAO3qE8&_nc_zt=24&_nc_ht=scontent.fmnl17-5.fna&_nc_gid=5cKsstotk4zMnJn5mxM6sw&oh=00_AfTKJfbBF64oZUFFIIwwf_Eye5Qq1oi3IAqS3NOPNjSlmA&oe=68797BE7" alt="Developer 6">
+                    <p>John Rommel Factor</p>
+                    <i class="fab fa-facebook-square social-icon" aria-label="Facebook Profile"></i>
+                </a>
+
+                <a href="https://www.facebook.com/jkcm.montemayor" target="_blank" class="dev-card">
+                    <img src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-1/371928975_1080217602951284_3762345129150256580_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=101&cb=99be929b-ca288af0&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeHsrfFK6ckPNGdIDo9ouo0hTnjpln6yVn5OeOmWfrJWftouVLPl8U77Zbg3yHaJF5TgKsoU_O0JzDsFS_Fe7zOw&_nc_ohc=K8QhRbZ87gcQ7kNvwEu_dTt&_nc_oc=AdmklzFbDVqAYMJWzqu9CBsyIcwaZdfyXcgRPmDmg1m3FOqDpNK7TdA_mB4dc7hKeWk&_nc_zt=24&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=aVeFpTwRVQERcfGAoNYtpw&oh=00_AfT2NGnEv6UY_KwON326PqVkSrlT0pzTLCsohwCupcOkPQ&oe=68797515">
+                    <p>Jake Montemayor </p>
+                    <i class="fab fa-facebook-square social-icon" aria-label="Facebook Profile"></i>
+                </a>
+
+                <a href="https://www.facebook.com/Japon.arudea" target="_blank" class="dev-card">
+                    <img src="https://scontent.fmnl34-1.fna.fbcdn.net/v/t39.30808-1/315283842_5568182919929842_3654409501914319601_n.jpg?stp=c0.450.720.720a_dst-jpg_s200x200_tt6&_nc_cat=103&cb=99be929b-ca288af0&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeFR2335BikmVWg3TkEhsNRJlRJcynGoQOOVElzKcahA4wouMLt6lRltqcpVyM4GYwDrE0zO2PuJDkiAPscIbqio&_nc_ohc=P1pCHcFytn4Q7kNvwESVM-y&_nc_oc=AdnHmxbwau_PQFXPIF6L1t82Jw8j1SEsxzJ8w9OMDzOLGPxoyDyNdoyEk3g6yP4vwbA&_nc_zt=24&_nc_ht=scontent.fmnl34-1.fna&_nc_gid=VYvjOmg0_gjzKn8Mk1Oxsg&oh=00_AfSD3w7cA2xCEE8OoGy_yYPiwZJgaVI40F6eUQA7IALQZA&oe=687967C8">
+                    <p>Clyde Jomari Aldea  </p>
+                    <i class="fab fa-facebook-square social-icon" aria-label="Facebook Profile"></i>
+                </a>
+
+            </div>
+            <div class="footer-buttons">
+                <button aria-label="View Assignments" onclick="window.location.href='assignments.html'">ASSIGNMENTS</button>
+                <button aria-label="View Grades" onclick="window.location.href='grades.html'">GRADES</button>
+                <button aria-label="View Calendar" onclick="window.location.href='calendar.html'">CALENDAR</button>
+                <button aria-label="View Events" onclick="window.location.href='events.html'">EVENTS</button> 
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 EC Classroom. All rights reserved.</p>
+    </footer>
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>
