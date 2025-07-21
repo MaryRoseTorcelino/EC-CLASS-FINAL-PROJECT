@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EC Classroom - My Classes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/my_classes.css">
+</head>
+<body>
+
+    <nav>
+        <a href="dashboard.html" class="logo" aria-label="EC Classroom Logo">
+            </a>
+        <div class="nav-links" role="navigation" aria-label="Main Navigation">
+            <a href="dashboard.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="profile.html">Profile</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="my_classes.html" class="active">My Classes</a> 
+            <a href="login.html" id="logoutLink">Logout</a>
+        </div>
+    </nav>
+    <header>
+        <h1>MY CLASSES</h1>
+    </header>
+    <main>
+        <section class="my-classes-section">
+            <h2 class="section-title">Classes You Created</h2>
+            <div id="createdClassesContainer" class="classes-grid">
+                <p id="noCreatedClassesMessage" class="empty-message">You haven't created any classes yet.</p>
+            </div>
+        </section>
+
+        <section class="my-classes-section">
+            <h2 class="section-title">Classes You Joined</h2>
+            <div id="joinedClassesContainer" class="classes-grid">
+                <p id="noJoinedClassesMessage" class="empty-message">You haven't joined any classes yet.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-buttons">
+            </div>
+        <p>&copy; 2025 EC Classroom. All rights reserved.</p>
+    </footer>
+    <script type="module" src="js/my_classes.js"></script>
+</body>
+</html>
