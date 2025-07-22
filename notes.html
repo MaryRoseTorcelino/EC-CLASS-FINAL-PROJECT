@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EC Classroom - Take a Note</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/notes.css"> </head>
+<body>
+
+    <nav>
+        <div class="logo" aria-label="EC Classroom Logo">
+        </div>
+        <div class="nav-links" role="navigation" aria-label="Main Navigation">
+            <a href="dashboard.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="profile.html">Profile</a>
+            <a href="calendar.html">Calendar</a> 
+            <a href="my_classes.html">My Classes</a>
+            <a href="login.html" id="logoutLink">Logout</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1 id="pageHeader">CREATE NEW NOTE</h1>
+    </header>
+
+    <main>
+        <section class="note-container">
+            <button class="back-button" onclick="window.history.back()">
+                <i class="fas fa-arrow-left"></i> Back
+            </button>
+            <form id="noteForm" class="note-form">
+                <input type="hidden" id="noteId"> 
+
+                <label for="noteTitle">Note Title:</label>
+                <input type="text" id="noteTitle" required aria-required="true" placeholder="e.g., Meeting Minutes, Study Notes">
+
+                <label for="noteContent">Note Content:</label>
+                <textarea id="noteContent" required aria-required="true" placeholder="Start typing your note here..."></textarea>
+
+                <button type="submit" id="submitNoteBtn">Save Note</button>
+                <button type="button" id="cancelEditBtn" style="display: none;">Cancel Edit</button>
+                <div id="message" class="message" role="alert" aria-live="polite"></div>
+            </form>
+        </section>
+
+        <section class="note-list-section contact-container">
+            <h2 id="yourNotesHeader">Your Saved Notes</h2>
+            <div id="notesContainer" class="notes-grid">
+                </div>
+            <p id="noNotesMessage" style="text-align: center; color: var(--text-light); display: none;">No notes yet. Start writing your first note!</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 EC Classroom. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="js/notes.js"></script>
+</body>
+</html>
+fonts.googleapis.com
